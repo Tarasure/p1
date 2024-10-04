@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Website Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #1badb7, #632222);
+        }
+        
+        .result {
+            background-color: rgba(131, 80, 144, 0.129);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(41, 30, 47, 0.186);
+        }
+        
+        #result-text {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        #detect-btn {
+            background-color: #000; 
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          #detect-btn:hover {
+            background-color: #333; 
+            transform: scale(1.1);
+          }
+    </style>
+</head>
+<body>
+    <header class="bg-gray-800 py-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl text-gray-200">Phishing Website Detector</h1>
+            <ul class="flex items-center">
+                <li class="mr-6"><a href="phish.html" class="text-gray-200 hover:text-white transition duration-300" onclick="loadpage('phish.html')">Home</a></li>
+                <li class="mr-6"><a href="about.html" class="text-gray-200 hover:text-white transition duration-300" onclick="loadpage('about.html')">About</a></li>
+                <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300" onclick="loadpage('contact.html')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto p-4 mt-10">
+        <section class="hero bg-gray-100 py-12 rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold mb-4 text-center">Phishing Website Detector</h1>
+            <p class="text-lg mb-8 text-center">Detecting phishing websites made easier</p>
+            <form class="flex flex-col w-1/2 mx-auto">
+                <input type="url" id="url-input" placeholder="Enter website URL" class="py-2 px-4 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
+                <button id="detect-btn" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg mt-4">Detect</button>
+            </form>
+        </section>
+        <section class="result py-12 mt-10">
+            <h2 class="text-2xl font-bold mb-4">Result</h2>
+            <p id="result-text" class="text-lg"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
